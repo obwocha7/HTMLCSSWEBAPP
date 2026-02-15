@@ -30,7 +30,7 @@ const DEFAULT_STATE = {
   completedModules: [],
   completedCapstones: [],
   earnedBadges: [],
-  unlockedWorlds: ['world-1'],
+  unlockedWorlds: ['world-1', 'world-2', 'world-3', 'world-4', 'world-5'],
   currentWorld: 'world-1',
   currentLesson: null,
   codeSnippets: [],
