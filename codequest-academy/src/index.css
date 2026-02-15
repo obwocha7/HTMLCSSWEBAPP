@@ -1,0 +1,197 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+@layer base {
+  body {
+    @apply bg-deep-space text-cloud-white font-body m-0 p-0;
+    overflow-x: hidden;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-deep-space;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-electric-violet rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-electric-violet-light;
+  }
+
+  ::selection {
+    @apply bg-electric-violet text-cloud-white;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-card-bg backdrop-blur-md border border-card-border rounded-xl;
+  }
+
+  .glow-border {
+    position: relative;
+  }
+
+  .glow-border::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, #7C3AED, #06D6A0, #FFD166);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0.5;
+    transition: opacity 0.3s;
+  }
+
+  .glow-border:hover::before {
+    opacity: 1;
+  }
+
+  .btn-primary {
+    @apply bg-electric-violet hover:bg-electric-violet-light text-cloud-white font-semibold py-2 px-6 rounded-lg transition-all duration-200 shadow-glow-violet hover:shadow-lg active:scale-95;
+  }
+
+  .btn-success {
+    @apply bg-neon-cyan hover:bg-neon-cyan-dark text-deep-space font-semibold py-2 px-6 rounded-lg transition-all duration-200 shadow-glow-cyan hover:shadow-lg active:scale-95;
+  }
+
+  .btn-gold {
+    @apply bg-solar-gold hover:bg-solar-gold-dark text-deep-space font-semibold py-2 px-6 rounded-lg transition-all duration-200 shadow-glow-gold hover:shadow-lg active:scale-95;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-electric-violet via-neon-cyan to-solar-gold;
+  }
+
+  .text-gradient-violet {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-electric-violet to-electric-violet-light;
+  }
+
+  .text-gradient-cyan {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-neon-cyan to-neon-cyan-dark;
+  }
+
+  .particle {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .world-node {
+    @apply relative cursor-pointer transition-all duration-300;
+  }
+
+  .world-node:hover {
+    transform: scale(1.05);
+  }
+
+  .world-node.locked {
+    @apply opacity-40 cursor-not-allowed;
+    filter: grayscale(0.8);
+  }
+
+  .world-node.locked:hover {
+    transform: none;
+  }
+
+  .xp-bar-fill {
+    background: linear-gradient(90deg, #7C3AED, #06D6A0);
+    transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .xp-bar-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    animation: shimmer 2s linear infinite;
+    background-size: 200% 100%;
+  }
+
+  .companion-container {
+    @apply relative;
+  }
+
+  .companion-speech-bubble {
+    @apply absolute -top-16 left-1/2 -translate-x-1/2 bg-deep-space-lighter border border-card-border rounded-lg px-3 py-2 text-xs text-cloud-dim whitespace-nowrap;
+  }
+
+  .companion-speech-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #252452;
+  }
+
+  .badge-card {
+    @apply glass-card p-3 flex flex-col items-center gap-2 transition-all duration-300 hover:scale-105;
+  }
+
+  .badge-card.earned {
+    @apply border-solar-gold shadow-glow-gold;
+  }
+
+  .badge-card.locked {
+    @apply opacity-50 grayscale;
+  }
+
+  .lesson-card {
+    @apply glass-card p-4 cursor-pointer transition-all duration-300 hover:border-electric-violet hover:shadow-glow-violet;
+  }
+
+  .lesson-card.completed {
+    @apply border-neon-cyan;
+  }
+
+  .lesson-card.active {
+    @apply border-electric-violet shadow-glow-violet;
+  }
+
+  .lesson-card.locked {
+    @apply opacity-40 cursor-not-allowed;
+  }
+
+  .stars-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+  }
+
+  .star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    animation: starTwinkle 1.5s ease-in-out infinite;
+  }
+}
