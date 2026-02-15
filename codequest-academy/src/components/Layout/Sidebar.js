@@ -11,7 +11,6 @@ export default function Sidebar({
   completedLessons,
   completedModules,
   earnedBadges,
-  unlockedWorlds,
   onNavigate,
   onSelectWorld,
   collapsed,
@@ -62,8 +61,7 @@ export default function Sidebar({
               {collapsed ? '' : 'World Map'}
             </div>
             <div className="flex flex-col gap-1.5">
-              {curriculum.map((world, idx) => {
-                const isUnlocked = unlockedWorlds.includes(world.id);
+              {curriculum.map((world) => {
                 const isCurrent = currentWorld === world.id;
                 const totalLessons = world.modules.reduce((sum, m) => sum + m.lessons.length, 0);
                 const completedCount = world.modules.reduce(
@@ -75,33 +73,28 @@ export default function Sidebar({
                 return (
                   <button
                     key={world.id}
-                    onClick={() => isUnlocked && onSelectWorld(world.id)}
-                    disabled={!isUnlocked}
+                    onClick={() => onSelectWorld(world.id)}
                     className={`flex items-center gap-2 px-2 py-2 rounded-lg text-left transition-all duration-200 ${
-                      !isUnlocked
-                        ? 'opacity-40 cursor-not-allowed'
-                        : isCurrent
+                      isCurrent
                         ? 'bg-electric-violet/20 border border-electric-violet/40'
                         : 'hover:bg-deep-space-lighter'
                     }`}
                   >
-                    <span className="text-lg">{isUnlocked ? world.icon : '🔒'}</span>
+                    <span className="text-lg">{world.icon}</span>
                     {!collapsed && (
                       <div className="flex-1 min-w-0">
                         <div className="text-xs font-semibold text-cloud-white truncate">
-                          {isUnlocked ? world.name : `World ${idx + 1}`}
+                          {world.name}
                         </div>
-                        {isUnlocked && (
-                          <div className="w-full h-1 bg-deep-space-lighter rounded-full mt-1">
-                            <div
-                              className="h-full rounded-full transition-all duration-500"
-                              style={{
-                                width: `${progress}%`,
-                                backgroundColor: world.color,
-                              }}
-                            />
-                          </div>
-                        )}
+                        <div className="w-full h-1 bg-deep-space-lighter rounded-full mt-1">
+                          <div
+                            className="h-full rounded-full transition-all duration-500"
+                            style={{
+                              width: `${progress}%`,
+                              backgroundColor: world.color,
+                            }}
+                          />
+                        </div>
                       </div>
                     )}
                   </button>

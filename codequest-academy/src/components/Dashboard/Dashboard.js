@@ -14,7 +14,6 @@ export default function Dashboard({
   completedModules,
   completedCapstones,
   earnedBadges,
-  unlockedWorlds,
   companionId,
   companionName,
   onNavigate,
@@ -31,7 +30,6 @@ export default function Dashboard({
   let nextLesson = null;
   let nextWorld = null;
   for (const world of curriculum) {
-    if (!unlockedWorlds.includes(world.id)) continue;
     for (const mod of world.modules) {
       for (const lesson of mod.lessons) {
         if (!completedLessons.includes(lesson.id)) {
@@ -117,7 +115,6 @@ export default function Dashboard({
         <h2 className="text-lg font-bold text-cloud-white mb-3">Your Worlds</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
           {curriculum.map((world) => {
-            const isUnlocked = unlockedWorlds.includes(world.id);
             const worldLessons = world.modules.reduce((sum, m) => sum + m.lessons.length, 0);
             const worldCompleted = world.modules.reduce(
               (sum, m) => sum + m.lessons.filter(l => completedLessons.includes(l.id)).length,
@@ -129,35 +126,26 @@ export default function Dashboard({
             return (
               <button
                 key={world.id}
-                onClick={() => isUnlocked && onSelectWorld(world.id)}
-                disabled={!isUnlocked}
-                className={`glass-card p-4 text-left transition-all duration-300 ${
-                  isUnlocked
-                    ? 'hover:border-electric-violet hover:shadow-glow-violet cursor-pointer'
-                    : 'opacity-40 cursor-not-allowed'
-                }`}
+                onClick={() => onSelectWorld(world.id)}
+                className="glass-card p-4 text-left transition-all duration-300 hover:border-electric-violet hover:shadow-glow-violet cursor-pointer"
               >
                 <div className="flex items-center gap-3 mb-3">
-                  <span className="text-3xl">{isUnlocked ? world.icon : '🔒'}</span>
+                  <span className="text-3xl">{world.icon}</span>
                   <div>
                     <div className="font-bold text-cloud-white text-sm">{world.name}</div>
                     <div className="text-xs text-cloud-dim">{world.subtitle}</div>
                   </div>
                 </div>
-                {isUnlocked && (
-                  <>
-                    <div className="w-full h-2 bg-deep-space-lighter rounded-full mb-2">
-                      <div
-                        className="h-full rounded-full transition-all duration-500"
-                        style={{ width: `${progress}%`, backgroundColor: world.color }}
-                      />
-                    </div>
-                    <div className="flex justify-between text-xs text-cloud-dim">
-                      <span>{worldCompleted}/{worldLessons} lessons</span>
-                      {capDone && <span className="text-neon-cyan">✓ Capstone</span>}
-                    </div>
-                  </>
-                )}
+                <div className="w-full h-2 bg-deep-space-lighter rounded-full mb-2">
+                  <div
+                    className="h-full rounded-full transition-all duration-500"
+                    style={{ width: `${progress}%`, backgroundColor: world.color }}
+                  />
+                </div>
+                <div className="flex justify-between text-xs text-cloud-dim">
+                  <span>{worldCompleted}/{worldLessons} lessons</span>
+                  {capDone && <span className="text-neon-cyan">✓ Capstone</span>}
+                </div>
               </button>
             );
           })}

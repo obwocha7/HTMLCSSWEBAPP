@@ -6,7 +6,6 @@ export default function WorldMap({
   completedLessons,
   completedModules,
   completedCapstones,
-  unlockedWorlds,
   onSelectWorld,
   onStartLesson,
   onNavigate,
@@ -52,23 +51,19 @@ export default function WorldMap({
       {/* World Selector Tabs */}
       <div className="flex gap-2 overflow-x-auto pb-2">
         {curriculum.map((w) => {
-          const isUnlocked = unlockedWorlds.includes(w.id);
           const isCurrent = w.id === currentWorld;
           return (
             <button
               key={w.id}
-              onClick={() => isUnlocked && onSelectWorld(w.id)}
-              disabled={!isUnlocked}
+              onClick={() => onSelectWorld(w.id)}
               className={`shrink-0 px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 ${
                 isCurrent
                   ? 'text-cloud-white'
-                  : isUnlocked
-                  ? 'bg-deep-space-lighter text-cloud-dim hover:text-cloud-white'
-                  : 'bg-deep-space-lighter text-cloud-dim opacity-40 cursor-not-allowed'
+                  : 'bg-deep-space-lighter text-cloud-dim hover:text-cloud-white'
               }`}
               style={isCurrent ? { backgroundColor: `${w.color}33`, color: w.color } : {}}
             >
-              {isUnlocked ? w.icon : '🔒'} {w.name}
+              {w.icon} {w.name}
             </button>
           );
         })}
@@ -80,9 +75,6 @@ export default function WorldMap({
           const moduleLessons = module.lessons;
           const completedInModule = moduleLessons.filter(l => completedLessons.includes(l.id)).length;
           const allComplete = completedInModule === moduleLessons.length;
-          const prevModuleComplete = modIdx === 0 || world.modules[modIdx - 1].lessons.every(
-            l => completedLessons.includes(l.id)
-          );
 
           return (
             <div key={module.id} className="space-y-3">
@@ -101,28 +93,20 @@ export default function WorldMap({
               <div className="ml-4 border-l-2 border-deep-space-lighter pl-4 space-y-2">
                 {moduleLessons.map((lesson, lessonIdx) => {
                   const isCompleted = completedLessons.includes(lesson.id);
-                  const prevCompleted = lessonIdx === 0
-                    ? prevModuleComplete
-                    : completedLessons.includes(moduleLessons[lessonIdx - 1].id);
-                  const isAvailable = prevCompleted && !isCompleted;
-                  const isLocked = !prevCompleted && !isCompleted;
 
                   return (
                     <button
                       key={lesson.id}
-                      onClick={() => !isLocked && onStartLesson(lesson.id)}
-                      disabled={isLocked}
+                      onClick={() => onStartLesson(lesson.id)}
                       className={`lesson-card w-full text-left flex items-center gap-3 ${
-                        isCompleted ? 'completed' : isAvailable ? 'active' : 'locked'
+                        isCompleted ? 'completed' : 'active'
                       }`}
                     >
                       <div
                         className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold shrink-0 ${
                           isCompleted
                             ? 'bg-neon-cyan text-deep-space'
-                            : isAvailable
-                            ? 'bg-electric-violet text-cloud-white animate-pulse-glow'
-                            : 'bg-deep-space-lighter text-cloud-dim'
+                            : 'bg-electric-violet text-cloud-white animate-pulse-glow'
                         }`}
                       >
                         {isCompleted ? '✓' : lessonIdx + 1}
@@ -180,9 +164,6 @@ export default function WorldMap({
                     <button
                       onClick={() => onNavigate('lesson')}
                       className="btn-primary text-sm py-1.5 px-4"
-                      disabled={!world.modules.every(m =>
-                        m.lessons.every(l => completedLessons.includes(l.id))
-                      )}
                     >
                       Start Capstone
                     </button>
