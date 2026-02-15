@@ -180,7 +180,7 @@ export default function LessonView({
       </div>
 
       {/* Slides */}
-      {lesson.slides && <SlidePanel slides={lesson.slides} />}
+      {lesson.slides && <SlidePanel slides={lesson.slides} lessonId={lesson.id} />}
 
       {/* Editor + Preview */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 relative">
