@@ -98,7 +98,6 @@ export default function App() {
             completedModules={game.completedModules}
             completedCapstones={game.completedCapstones}
             earnedBadges={game.earnedBadges}
-            unlockedWorlds={game.unlockedWorlds}
             companionId={game.companionId}
             companionName={game.companionName}
             onNavigate={handleNavigate}
@@ -114,7 +113,6 @@ export default function App() {
             completedLessons={game.completedLessons}
             completedModules={game.completedModules}
             completedCapstones={game.completedCapstones}
-            unlockedWorlds={game.unlockedWorlds}
             onSelectWorld={handleSelectWorld}
             onStartLesson={handleStartLesson}
             onNavigate={handleNavigate}
@@ -186,7 +184,6 @@ export default function App() {
         completedLessons={game.completedLessons}
         completedModules={game.completedModules}
         earnedBadges={game.earnedBadges}
-        unlockedWorlds={game.unlockedWorlds}
         onNavigate={handleNavigate}
         onSelectWorld={handleSelectWorld}
         collapsed={sidebarCollapsed}
