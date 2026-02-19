@@ -37,6 +37,10 @@ const curriculum = [
                 title: 'HTML Elements & Tags',
                 content: 'HTML uses "tags" to mark up content. Tags come in pairs: an opening tag <tagname> and a closing tag </tagname>. The content goes between them. For example: <h1>Hello!</h1> creates a big heading. Some tags are self-closing and don\'t need a partner, like <br> for line breaks and <img> for images. Every tag has a purpose!',
               },
+              {
+                title: 'The Browser\'s Job',
+                content: 'Your browser (Chrome, Firefox, Safari, Edge) is like a translator. It reads the HTML code and converts it into the visual page you see. This process is called "rendering." The browser reads your code from top to bottom, building the page as it goes. If it finds an error, it tries its best to fix it — browsers are very forgiving! But writing clean, correct HTML is still important for accessibility and SEO.',
+              },
             ],
             starterCode: '<!-- Welcome! This is a comment -->\n<!-- Comments are notes for coders -->\n<!-- They don\'t show on the page -->\n\nHello, World!',
             solution: 'Hello, World!',
@@ -61,6 +65,10 @@ const curriculum = [
               {
                 title: 'How the Editor Works',
                 content: 'The editor has line numbers on the left to help you find specific lines. It uses syntax highlighting — different colors for different parts of your code (tags are one color, text is another, attributes are another). This makes it much easier to spot mistakes. When you see colored text, that\'s the editor helping you understand your code structure!',
+              },
+              {
+                title: 'Common Editor Features',
+                content: 'Professional code editors have powerful features:\n\n• Auto-completion — suggests tags as you type\n• Bracket matching — highlights matching opening/closing tags\n• Error highlighting — underlines mistakes in red\n• Indentation — keeps your code organized and readable\n• Multi-cursor — edit multiple lines at once\n\nOur editor has syntax highlighting and line numbers. As you grow, you\'ll use VS Code with even more features!',
               },
               {
                 title: 'Try It Yourself!',
@@ -89,6 +97,10 @@ const curriculum = [
               {
                 title: 'The <html> Root Element',
                 content: 'After DOCTYPE, everything goes inside <html> and </html> tags. This is the root element — the container for your entire webpage. You can also add a language attribute: <html lang="en"> tells the browser your page is in English. This helps screen readers and search engines understand your content better.',
+              },
+              {
+                title: 'Why Structure Matters',
+                content: 'HTML is all about structure. Just like a house needs a foundation before walls and a roof, your webpage needs proper structure before content. The DOCTYPE and <html> tags are that foundation. Every professional website — from Google to Netflix — starts with these exact same lines. You\'re learning the same skills that real developers use every day!',
               },
               {
                 title: 'Putting It Together',
@@ -136,6 +148,10 @@ const curriculum = [
               {
                 title: 'The Complete Structure',
                 content: 'Every HTML page follows this exact structure:\n\n<!DOCTYPE html>\n<html>\n  <head>\n    <title>Page Title</title>\n  </head>\n  <body>\n    Visible content here\n  </body>\n</html>\n\nThis is the skeleton you\'ll use for every single webpage you build. Memorize it — it becomes second nature!',
+              },
+              {
+                title: 'Pro Tips for the Head',
+                content: 'Here are essential <head> elements every page should have:\n\n• <meta charset="UTF-8"> — supports all characters (emojis too! 🎉)\n• <meta name="viewport" ...> — makes your page mobile-friendly\n• <title>Page Title</title> — shows in the browser tab and search results\n• <meta name="description" content="..."> — helps with SEO\n• <link rel="stylesheet" href="styles.css"> — connects CSS files\n\nThink of the <head> as the backstage crew — invisible but essential!',
               },
             ],
             starterCode: '<!DOCTYPE html>\n<html>\n  <!-- Add head section with a title -->\n\n  <!-- Add body section with a greeting -->\n\n</html>',
@@ -231,6 +247,10 @@ const curriculum = [
                 title: 'Headings in Action',
                 content: 'Here\'s how headings look in code:\n\n<h1>Main Title</h1>\n<h2>Chapter Title</h2>\n<h3>Section Title</h3>\n<h4>Sub-section</h4>\n<h5>Detail</h5>\n<h6>Fine Print</h6>\n\nEach level gets progressively smaller. The browser applies default sizes, but you can change them later with CSS!',
               },
+              {
+                title: 'Real-World Heading Example',
+                content: 'Here\'s how a real blog post might use headings:\n\n<h1>How to Build a Website</h1>\n<h2>Chapter 1: Getting Started</h2>\n<h3>Installing Your Tools</h3>\n<h3>Creating Your First File</h3>\n<h2>Chapter 2: HTML Basics</h2>\n<h3>Tags and Elements</h3>\n<h3>Attributes</h3>\n\nNotice how the hierarchy creates a clear outline. Screen readers let users jump between headings to navigate quickly!',
+              },
             ],
             starterCode: '<!DOCTYPE html>\n<html>\n<body>\n  <!-- Try all 6 heading levels! -->\n\n</body>\n</html>',
             solution: '<!DOCTYPE html>\n<html>\n<body>\n  <h1>Main Title</h1>\n  <h2>Section</h2>\n  <h3>Sub-section</h3>\n  <h4>Detail</h4>\n  <h5>Small Detail</h5>\n  <h6>Tiny Detail</h6>\n</body>\n</html>',
@@ -259,12 +279,20 @@ const curriculum = [
                 content: 'The <p> tag defines a paragraph of text. Browsers automatically add vertical space (margin) before and after each paragraph, creating visual separation. Unlike a word processor, pressing Enter in your HTML code does NOT create a new line on the page — you must use tags to control layout. That\'s why <p> is so important!',
               },
               {
+                title: 'White Space Collapsing',
+                content: 'HTML collapses white space — multiple spaces, tabs, and line breaks in your code are all treated as a single space in the browser. This means:\n\n"Hello     World" displays as "Hello World"\n\nThis is actually useful! It means you can format your code however you like for readability without affecting the output. To control spacing on the page, you use HTML tags and CSS.',
+              },
+              {
                 title: 'Line Breaks with <br>',
                 content: 'Need a new line without starting a new paragraph? Use the <br> tag! It\'s a self-closing tag (also called a void element) — it doesn\'t need a closing </br> tag. Use <br> for things like addresses, poems, or song lyrics where you want line breaks within the same block of text.',
               },
               {
                 title: 'Horizontal Rules with <hr>',
                 content: 'The <hr> tag creates a horizontal line across the page — a visual separator between sections. Like <br>, it\'s self-closing. It\'s great for separating different topics or sections of content:\n\n<p>Section one content</p>\n<hr>\n<p>Section two content</p>\n\nThe line helps readers know they\'re moving to a new topic.',
+              },
+              {
+                title: 'Preformatted Text with <pre>',
+                content: 'The <pre> tag preserves ALL white space and line breaks exactly as written in the code. It\'s perfect for displaying code snippets, ASCII art, or any text where spacing matters:\n\n<pre>\n  *\n ***\n*****\n ***\n  *\n</pre>\n\nText inside <pre> uses a monospace font by default. Combine with <code> for code blocks: <pre><code>your code here</code></pre>',
               },
             ],
             starterCode: '<!DOCTYPE html>\n<html>\n<body>\n  <!-- Add two paragraphs and a line break -->\n\n</body>\n</html>',
@@ -299,6 +327,10 @@ const curriculum = [
                 title: 'When to Use Each',
                 content: 'Use <strong> when the text is genuinely important — like a warning or key term. Use <em> when you want to stress a word — like "I really love coding." Use <mark> to highlight search results or key phrases. Use <small> for fine print or disclaimers. The right tag makes your HTML more meaningful and accessible!',
               },
+              {
+                title: 'Inline vs. Block Elements',
+                content: 'Text formatting tags are "inline" elements — they flow within a line of text without creating a new line. Block elements like <p>, <h1>, and <div> take up the full width and start on a new line.\n\nInline: <strong>, <em>, <a>, <span>, <img>\nBlock: <p>, <h1>-<h6>, <div>, <ul>, <table>\n\nUnderstanding this difference is key to controlling your page layout!',
+              },
             ],
             starterCode: '<!DOCTYPE html>\n<html>\n<body>\n  <p>Make some words <!-- bold --> and some <!-- italic -->!</p>\n</body>\n</html>',
             solution: '<!DOCTYPE html>\n<html>\n<body>\n  <p>Make some words <strong>bold</strong> and some <em>italic</em>!</p>\n</body>\n</html>',
@@ -331,6 +363,10 @@ const curriculum = [
               {
                 title: 'Description Lists',
                 content: 'There\'s also a third type: the description list <dl>, used for term-definition pairs:\n\n<dl>\n  <dt>HTML</dt>\n  <dd>HyperText Markup Language</dd>\n  <dt>CSS</dt>\n  <dd>Cascading Style Sheets</dd>\n</dl>\n\n<dt> is the term, <dd> is the description. Great for glossaries, FAQs, and metadata!',
+              },
+              {
+                title: 'Lists in the Real World',
+                content: 'Lists are everywhere on the web:\n\n• Navigation menus are <ul> lists styled with CSS\n• Step-by-step tutorials use <ol> lists\n• Product features use <ul> lists\n• FAQ pages use <dl> description lists\n• Breadcrumbs are <ol> lists\n\nMastering lists is essential because they\'re one of the most commonly used HTML elements. CSS can transform a plain list into a beautiful navigation bar!',
               },
             ],
             starterCode: '<!DOCTYPE html>\n<html>\n<body>\n  <h2>My Favorite Things</h2>\n  <!-- Create an unordered list with 3 items -->\n\n  <h2>Steps to Make a Sandwich</h2>\n  <!-- Create an ordered list with 3 steps -->\n\n</body>\n</html>',
@@ -374,6 +410,10 @@ const curriculum = [
                 title: 'Anchor Links (Jump to Section)',
                 content: 'You can create links that jump to a specific section on the same page using IDs:\n\n<a href="#about">Go to About</a>\n...\n<h2 id="about">About Section</h2>\n\nThe # symbol tells the browser to look for an element with that ID on the current page. This is how "table of contents" navigation works on long pages!',
               },
+              {
+                title: 'Link Best Practices',
+                content: 'Tips for creating great links:\n\n• Use descriptive text: "Read our guide" is better than "Click here"\n• Add rel="noopener noreferrer" with target="_blank" for security\n• Style visited links differently so users know where they\'ve been\n• Make sure links are keyboard-accessible (they are by default!)\n• Use title attribute for extra context on hover\n\nGood link text helps both users and search engines understand where the link goes.',
+              },
             ],
             starterCode: '<!DOCTYPE html>\n<html>\n<body>\n  <h1>My Links Page</h1>\n  <!-- Create a link to your favorite website -->\n\n</body>\n</html>',
             solution: '<!DOCTYPE html>\n<html>\n<body>\n  <h1>My Links Page</h1>\n  <a href="https://example.com">Visit Example</a>\n</body>\n</html>',
@@ -402,6 +442,10 @@ const curriculum = [
               {
                 title: 'Image Attributes',
                 content: 'You can control image size with width and height attributes:\n\n<img src="photo.jpg" alt="Sunset" width="600" height="400">\n\nYou can also make images clickable by wrapping them in an <a> tag:\n\n<a href="https://example.com">\n  <img src="logo.png" alt="Company Logo">\n</a>\n\nFor captions, use the <figure> and <figcaption> elements:\n\n<figure>\n  <img src="chart.png" alt="Sales Chart">\n  <figcaption>Annual Sales 2025</figcaption>\n</figure>',
+              },
+              {
+                title: 'Image Formats',
+                content: 'Common image formats for the web:\n\n• JPEG (.jpg) — best for photographs, supports millions of colors, lossy compression\n• PNG (.png) — best for graphics with transparency, lossless compression\n• GIF (.gif) — supports animation, limited to 256 colors\n• SVG (.svg) — vector graphics that scale perfectly at any size\n• WebP (.webp) — modern format with better compression than JPEG/PNG\n\nChoose the right format for the job: photos → JPEG, logos → SVG or PNG, animations → GIF or video.',
               },
               {
                 title: 'File Paths',
@@ -447,6 +491,10 @@ const curriculum = [
                 title: 'Spanning Rows & Columns',
                 content: 'Cells can span multiple columns or rows:\n\n• colspan="2" — cell spans 2 columns\n• rowspan="2" — cell spans 2 rows\n\n<tr>\n  <th colspan="2">Full Name</th>\n</tr>\n\nThis is useful for creating complex table layouts like merged header cells or grouped data. Tables should only be used for tabular data — never for page layout (that\'s what CSS is for)!',
               },
+              {
+                title: 'Table Accessibility',
+                content: 'Make tables accessible with these practices:\n\n• Always use <th> for header cells — screen readers announce them\n• Add scope="col" or scope="row" to <th> for clarity\n• Use <caption> to give the table a title\n• Keep tables simple — complex nested tables are hard to navigate\n• Add a summary for complex data tables\n\n<table>\n  <caption>Student Grades</caption>\n  <tr><th scope="col">Name</th><th scope="col">Grade</th></tr>\n</table>',
+              },
             ],
             starterCode: '<!DOCTYPE html>\n<html>\n<body>\n  <h1>My Schedule</h1>\n  <!-- Create a table with headers and at least 2 rows -->\n\n</body>\n</html>',
             solution: '<!DOCTYPE html>\n<html>\n<body>\n  <h1>My Schedule</h1>\n  <table>\n    <tr>\n      <th>Day</th>\n      <th>Activity</th>\n    </tr>\n    <tr>\n      <td>Monday</td>\n      <td>Coding</td>\n    </tr>\n    <tr>\n      <td>Tuesday</td>\n      <td>Art</td>\n    </tr>\n  </table>\n</body>\n</html>',
@@ -486,6 +534,10 @@ const curriculum = [
                 title: 'Dropdowns & Textareas',
                 content: 'For longer text, use <textarea>:\n\n<textarea rows="5" cols="40" placeholder="Your message..."></textarea>\n\nFor dropdown menus, use <select> with <option>:\n\n<select name="country">\n  <option value="">-- Select --</option>\n  <option value="us">United States</option>\n  <option value="uk">United Kingdom</option>\n</select>\n\nGroup related fields with <fieldset> and <legend> for better organization and accessibility.',
               },
+              {
+                title: 'Form Validation',
+                content: 'HTML5 has built-in form validation — no JavaScript needed!\n\n• required — field must be filled\n• minlength="3" — minimum characters\n• maxlength="100" — maximum characters\n• min="0" max="100" — number range\n• pattern="[A-Za-z]+" — regex pattern\n• type="email" — validates email format\n\n<input type="email" required placeholder="your@email.com">\n\nThe browser shows error messages automatically when validation fails. This improves user experience and data quality!',
+              },
             ],
             starterCode: '<!DOCTYPE html>\n<html>\n<body>\n  <h1>Sign Up</h1>\n  <!-- Create a form with name input, email input, and submit button -->\n\n</body>\n</html>',
             solution: '<!DOCTYPE html>\n<html>\n<body>\n  <h1>Sign Up</h1>\n  <form>\n    <label>Name:</label>\n    <input type="text" placeholder="Your name">\n    <label>Email:</label>\n    <input type="email" placeholder="Your email">\n    <button type="submit">Sign Up!</button>\n  </form>\n</body>\n</html>',
@@ -511,6 +563,43 @@ const curriculum = [
       description: 'Build a complete single-page site with navigation, images, lists, and a contact form!',
       xpReward: 500,
       badge: 'foundation-forger',
+      slides: [
+        {
+          title: '🏆 Capstone: My Personal Homepage',
+          content: 'Welcome to your first capstone project! You\'ll build a complete personal homepage from scratch using everything you\'ve learned in World 1. This page will have a navigation menu, an about section with headings and paragraphs, an image, a list of your skills/hobbies, and a contact form. Let\'s build it step by step!',
+        },
+        {
+          title: 'Step 1: Page Structure',
+          content: 'Start with the complete HTML skeleton:\n\n<!DOCTYPE html>\n<html lang="en">\n<head>\n  <meta charset="UTF-8">\n  <title>My Homepage</title>\n</head>\n<body>\n  <!-- Navigation will go here -->\n  <!-- About section -->\n  <!-- Skills list -->\n  <!-- Contact form -->\n</body>\n</html>\n\nThis is your foundation. Every section will be added inside the <body>.',
+        },
+        {
+          title: 'Step 2: Navigation & About',
+          content: 'Add a navigation section with anchor links, then your about section:\n\n<h1>Welcome to My Homepage!</h1>\n<nav>\n  <a href="#about">About</a> |\n  <a href="#skills">Skills</a> |\n  <a href="#contact">Contact</a>\n</nav>\n<hr>\n<h2 id="about">About Me</h2>\n<p>Write a paragraph about yourself — who you are, what you love, and what you\'re learning!</p>\n<img src="https://via.placeholder.com/300x200" alt="My photo">',
+        },
+        {
+          title: 'Step 3: Skills List & Contact Form',
+          content: 'Add your skills as a list and a contact form:\n\n<h2 id="skills">My Skills</h2>\n<ul>\n  <li>HTML</li>\n  <li>Problem Solving</li>\n  <li>Creativity</li>\n</ul>\n\n<h2 id="contact">Contact Me</h2>\n<form>\n  <label for="name">Name:</label><br>\n  <input type="text" id="name" required><br>\n  <label for="email">Email:</label><br>\n  <input type="email" id="email" required><br>\n  <label for="msg">Message:</label><br>\n  <textarea id="msg" rows="4"></textarea><br>\n  <button type="submit">Send</button>\n</form>',
+        },
+        {
+          title: 'Step 4: Polish & Submit! 🎉',
+          content: 'Review your page and make sure it has:\n\n✅ Proper HTML structure (DOCTYPE, html, head, body)\n✅ A title in the <head>\n✅ Navigation links that jump to sections\n✅ An about section with heading, paragraph, and image\n✅ A skills list (ordered or unordered)\n✅ A contact form with inputs and a button\n\nClick "Run Code" to see your complete homepage! You\'ve mastered HTML fundamentals — you\'re ready for CSS!',
+        },
+      ],
+      starterCode: '<!DOCTYPE html>\n<html lang="en">\n<head>\n  <meta charset="UTF-8">\n  <title>My Homepage</title>\n</head>\n<body>\n  <!-- Build your personal homepage here! -->\n  <!-- Include: navigation, about section, skills list, contact form -->\n\n</body>\n</html>',
+      solution: '<!DOCTYPE html>\n<html lang="en">\n<head>\n  <meta charset="UTF-8">\n  <title>My Homepage</title>\n</head>\n<body>\n  <h1>My Homepage</h1>\n  <nav>\n    <a href="#about">About</a> |\n    <a href="#skills">Skills</a> |\n    <a href="#contact">Contact</a>\n  </nav>\n  <hr>\n  <h2 id="about">About Me</h2>\n  <p>I am learning web development at CodeQuest Academy!</p>\n  <img src="https://via.placeholder.com/300x200" alt="My photo">\n  <h2 id="skills">My Skills</h2>\n  <ul>\n    <li>HTML</li>\n    <li>Problem Solving</li>\n    <li>Creativity</li>\n  </ul>\n  <h2 id="contact">Contact Me</h2>\n  <form>\n    <label for="name">Name:</label><br>\n    <input type="text" id="name"><br>\n    <label for="email">Email:</label><br>\n    <input type="email" id="email"><br>\n    <button type="submit">Send</button>\n  </form>\n</body>\n</html>',
+      objectives: [
+        { id: 'obj-1', text: 'Create navigation with anchor links', completed: false },
+        { id: 'obj-2', text: 'Add an about section with heading, paragraph, and image', completed: false },
+        { id: 'obj-3', text: 'Add a skills list', completed: false },
+        { id: 'obj-4', text: 'Add a contact form with inputs', completed: false },
+      ],
+      validation: (code) => {
+        const hasNav = /<a[^>]+href=["']#/i.test(code);
+        const hasAbout = /<h[1-6][^>]*>[\s\S]*<\/h[1-6]>[\s\S]*<p>/i.test(code);
+        const hasList = /<[uo]l>[\s\S]*<li>/i.test(code);
+        const hasForm = /<form>[\s\S]*<input/i.test(code);
+        return [hasNav, hasAbout, hasList, hasForm];
+      },
     },
   },
   {
@@ -548,6 +637,10 @@ const curriculum = [
                 content: 'CSS follows a simple pattern:\n\nselector {\n  property: value;\n  property: value;\n}\n\nThe selector targets which HTML elements to style. The property is what you want to change (color, font-size, etc.). The value is what you want to set it to. Each declaration ends with a semicolon. The whole block is wrapped in curly braces { }.',
               },
               {
+                title: 'The Cascade Explained',
+                content: 'The "Cascading" in CSS means styles flow downward and can be overridden. When multiple rules target the same element, the browser uses these rules to decide which wins:\n\n1. Importance (!important — avoid using this)\n2. Specificity (ID > Class > Element)\n3. Source order (last rule wins if specificity is equal)\n\nThis cascade is what makes CSS powerful — you can set general styles and then override specific ones as needed.',
+              },
+              {
                 title: 'Your First CSS Rule',
                 content: 'Let\'s write a CSS rule that changes the color of all <h1> elements to purple:\n\nh1 {\n  color: purple;\n  font-size: 36px;\n  text-align: center;\n}\n\nThis rule says: "Find every <h1> element, make its text purple, set the font size to 36 pixels, and center it." Simple, powerful, and beautiful!',
               },
@@ -581,6 +674,10 @@ const curriculum = [
                 content: 'You can group selectors to apply the same styles:\n\nh1, h2, h3 { color: navy; }\n\nYou can also combine selectors:\n\n• Descendant: div p { } — all <p> inside <div>\n• Child: div > p { } — direct <p> children of <div>\n• Adjacent sibling: h2 + p { } — <p> right after <h2>\n\nThe universal selector * { } targets ALL elements — useful for CSS resets.',
               },
               {
+                title: 'Pseudo-classes',
+                content: 'Pseudo-classes target elements in a specific STATE:\n\n• :hover — when mouse is over the element\n• :focus — when element is focused (clicked/tabbed)\n• :first-child — first child of its parent\n• :last-child — last child of its parent\n• :nth-child(2) — second child\n• :nth-child(odd) — odd-numbered children\n\na:hover { color: red; }\ninput:focus { border-color: blue; }\n\nThese are essential for interactive, dynamic-feeling designs!',
+              },
+              {
                 title: 'Specificity: Which Rule Wins?',
                 content: 'When multiple rules target the same element, specificity determines which wins:\n\n1. Element selectors (p, h1) — lowest specificity\n2. Class selectors (.highlight) — medium specificity\n3. ID selectors (#special) — high specificity\n4. Inline styles (style="...") — highest specificity\n\nIf specificity is equal, the LAST rule in the CSS file wins. This is the "Cascading" part of Cascading Style Sheets!',
               },
@@ -612,6 +709,10 @@ const curriculum = [
               {
                 title: 'Understanding Hex Colors',
                 content: 'Hex colors use a # followed by 6 characters (0-9 and A-F):\n\n#RRGGBB — two digits each for Red, Green, Blue\n\n• #FF0000 = pure red (FF red, 00 green, 00 blue)\n• #00FF00 = pure green\n• #0000FF = pure blue\n• #FFFFFF = white (all colors at max)\n• #000000 = black (no colors)\n• #333333 = dark gray (shorthand: #333)\n\nYou can use 3-digit shorthand: #F00 = #FF0000',
+              },
+              {
+                title: 'HSL — The Designer\'s Choice',
+                content: 'HSL stands for Hue, Saturation, Lightness:\n\n• Hue: 0-360 degrees on the color wheel (0=red, 120=green, 240=blue)\n• Saturation: 0%-100% (0%=gray, 100%=vivid)\n• Lightness: 0%-100% (0%=black, 50%=normal, 100%=white)\n\nhsl(270, 80%, 50%) = vivid purple\n\nHSL is intuitive for designers because you can easily create color variations by adjusting just one value. Want a lighter shade? Increase lightness. Want a muted tone? Decrease saturation.',
               },
               {
                 title: 'Background Colors & Gradients',
@@ -663,6 +764,10 @@ const curriculum = [
                 title: 'Borders & Border Radius',
                 content: 'Borders have three properties: width, style, and color:\n\nborder: 2px solid #333;\n\nBorder styles include: solid, dashed, dotted, double, groove, ridge, and none.\n\nThe border-radius property rounds corners:\n\nborder-radius: 10px; — slightly rounded\nborder-radius: 50%; — perfect circle (on a square element)\n\nCombine with box-shadow for depth:\nbox-shadow: 0 4px 6px rgba(0,0,0,0.1);',
               },
+              {
+                title: 'Display Property',
+                content: 'The display property controls how an element behaves in the layout:\n\n• display: block — takes full width, starts on new line (div, p, h1)\n• display: inline — flows with text, no width/height (span, a, strong)\n• display: inline-block — inline but accepts width/height\n• display: none — completely hidden\n\nUnderstanding display is crucial for controlling layout. Later you\'ll learn display: flex and display: grid — the most powerful layout tools!',
+              },
             ],
             starterCode: '<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    .box {\n      background: #7C3AED;\n      color: white;\n      /* Add padding, border, and margin */\n\n    }\n  </style>\n</head>\n<body>\n  <div class="box">I am a box!</div>\n  <div class="box">I am another box!</div>\n</body>\n</html>',
             solution: '<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    .box {\n      background: #7C3AED;\n      color: white;\n      padding: 20px;\n      border: 3px solid #06D6A0;\n      margin: 10px;\n    }\n  </style>\n</head>\n<body>\n  <div class="box">I am a box!</div>\n  <div class="box">I am another box!</div>\n</body>\n</html>',
@@ -688,283 +793,40 @@ const curriculum = [
       description: 'Restyle your personal homepage with a complete CSS theme!',
       xpReward: 500,
       badge: 'style-sorcerer',
+      slides: [
+        {
+          title: '🎨 Capstone: My Styled Portfolio',
+          content: 'Time to make your homepage beautiful! In this capstone, you\'ll take a plain HTML page and transform it with CSS. You\'ll apply colors, fonts, spacing, borders, and backgrounds to create a professional-looking portfolio page. This project uses everything from World 2!',
+        },
+        {
+          title: 'Step 1: Base Styles',
+          content: 'Start by setting up your base styles in a <style> tag:\n\n<style>\n  * { box-sizing: border-box; margin: 0; padding: 0; }\n  body {\n    font-family: Arial, sans-serif;\n    background-color: #1a1a2e;\n    color: #e0e0e0;\n    line-height: 1.6;\n    padding: 20px;\n  }\n</style>\n\nThis CSS reset removes default margins and sets a dark theme with readable text.',
+        },
+        {
+          title: 'Step 2: Style the Header & Navigation',
+          content: 'Make your header stand out with a gradient and styled navigation:\n\nh1 {\n  color: #7C3AED;\n  text-align: center;\n  font-size: 2.5em;\n  margin-bottom: 10px;\n}\nnav {\n  text-align: center;\n  padding: 10px;\n  background: #16213e;\n  border-radius: 8px;\n  margin-bottom: 20px;\n}\nnav a {\n  color: #06D6A0;\n  text-decoration: none;\n  margin: 0 15px;\n}\nnav a:hover { color: #FFD166; }',
+        },
+        {
+          title: 'Step 3: Style Sections & Form',
+          content: 'Add card-like styling to your sections:\n\n.section {\n  background: #16213e;\n  padding: 20px;\n  border-radius: 12px;\n  border: 1px solid #333;\n  margin-bottom: 20px;\n}\n\nStyle your form inputs:\n\ninput, textarea {\n  width: 100%;\n  padding: 10px;\n  margin: 8px 0;\n  background: #1a1a2e;\n  border: 1px solid #444;\n  border-radius: 6px;\n  color: white;\n}\nbutton {\n  background: #7C3AED;\n  color: white;\n  padding: 12px 24px;\n  border: none;\n  border-radius: 8px;\n  cursor: pointer;\n}\nbutton:hover { background: #6D28D9; }',
+        },
+        {
+          title: 'Step 4: Final Touches! ✨',
+          content: 'Add finishing touches:\n\n✅ Consistent color scheme (use 3-4 colors max)\n✅ Proper spacing with padding and margin\n✅ Rounded corners with border-radius\n✅ Hover effects on links and buttons\n✅ A dark or light theme that looks professional\n\nYour portfolio should look polished and intentional. Every CSS property you\'ve learned comes together here. You\'re now a CSS stylist!',
+        },
+      ],
+      starterCode: '<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    /* Add your CSS theme here */\n\n  </style>\n</head>\n<body>\n  <h1>My Portfolio</h1>\n  <nav>\n    <a href="#about">About</a>\n    <a href="#skills">Skills</a>\n    <a href="#contact">Contact</a>\n  </nav>\n  <h2 id="about">About Me</h2>\n  <p>I am a web developer in training!</p>\n  <h2 id="skills">Skills</h2>\n  <ul>\n    <li>HTML</li>\n    <li>CSS</li>\n  </ul>\n  <h2 id="contact">Contact</h2>\n  <form>\n    <input type="text" placeholder="Name">\n    <input type="email" placeholder="Email">\n    <button>Send</button>\n  </form>\n</body>\n</html>',
+      solution: '<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    * { box-sizing: border-box; }\n    body { font-family: Arial, sans-serif; background: #1a1a2e; color: #e0e0e0; padding: 20px; }\n    h1 { color: #7C3AED; text-align: center; }\n    nav { text-align: center; padding: 10px; background: #16213e; border-radius: 8px; margin: 10px 0; }\n    nav a { color: #06D6A0; text-decoration: none; margin: 0 10px; }\n    h2 { color: #06D6A0; border-bottom: 2px solid #333; padding-bottom: 5px; margin: 20px 0 10px; }\n    input, textarea { width: 100%; padding: 8px; margin: 5px 0; background: #16213e; border: 1px solid #444; border-radius: 6px; color: white; }\n    button { background: #7C3AED; color: white; padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer; }\n  </style>\n</head>\n<body>\n  <h1>My Portfolio</h1>\n  <nav><a href="#about">About</a> <a href="#skills">Skills</a> <a href="#contact">Contact</a></nav>\n  <h2 id="about">About Me</h2>\n  <p>I am a web developer in training!</p>\n  <h2 id="skills">Skills</h2>\n  <ul><li>HTML</li><li>CSS</li></ul>\n  <h2 id="contact">Contact</h2>\n  <form><input type="text" placeholder="Name"><input type="email" placeholder="Email"><button>Send</button></form>\n</body>\n</html>',
+      objectives: [
+        { id: 'obj-1', text: 'Style the body with background color and font', completed: false },
+        { id: 'obj-2', text: 'Style headings and navigation links', completed: false },
+        { id: 'obj-3', text: 'Style form inputs and button', completed: false },
+      ],
+      validation: (code) => {
+        const hasBodyStyle = /body\s*\{[^}]*background/i.test(code);
+        const hasHeadingStyle = /h[12]\s*\{[^}]*color/i.test(code);
+        const hasInputStyle = /input[^{]*\{[^}]*padding/i.test(code);
+        return [hasBodyStyle, hasHeadingStyle, hasInputStyle];
+      },
     },
   },
-  {
-    id: 'world-3',
-    name: 'The Layout Labyrinth',
-    subtitle: 'Intermediate Layout',
-    icon: '🏛️',
-    color: '#FFD166',
-    bgGradient: 'from-yellow-900 to-amber-900',
-    description: 'Master the art of layout! Flexbox and Grid will give you the power to arrange anything on screen.',
-    unlocked: false,
-    modules: [
-      {
-        id: 'module-3-1',
-        name: 'Flexbox',
-        icon: '💪',
-        lessons: [
-          {
-            id: 'lesson-29',
-            title: 'Flex Container & Items',
-            type: 'guided',
-            xpReward: 150,
-            description: 'Enter the world of Flexbox — the most powerful layout tool!',
-            slides: [
-              {
-                title: 'What is Flexbox?',
-                content: 'Flexbox (Flexible Box Layout) is a one-dimensional layout system for arranging items in rows or columns. Before Flexbox, centering things in CSS was notoriously difficult. Now it\'s just three lines:\n\ndisplay: flex;\njustify-content: center;\nalign-items: center;\n\nAdd display: flex to a container, and its children become flex items that line up in a row by default!',
-              },
-              {
-                title: 'Flex Container Properties',
-                content: 'The container (parent) controls the layout:\n\n• flex-direction: row | column — direction of items\n• justify-content — alignment along the MAIN axis:\n  flex-start, flex-end, center, space-between, space-around, space-evenly\n• align-items — alignment along the CROSS axis:\n  flex-start, flex-end, center, stretch, baseline\n• flex-wrap: wrap — allow items to wrap to next line\n• gap: 20px — space between items',
-              },
-              {
-                title: 'Flex Item Properties',
-                content: 'Individual items can also be controlled:\n\n• flex-grow: 1 — how much the item should grow\n• flex-shrink: 0 — how much it should shrink\n• flex-basis: 200px — initial size before growing/shrinking\n• flex: 1 — shorthand for grow:1, shrink:1, basis:0\n• align-self: flex-end — override alignment for one item\n• order: 2 — change visual order (default is 0)\n\nThe flex shorthand is the most commonly used: flex: 1 makes items share space equally.',
-              },
-              {
-                title: 'Common Flexbox Patterns',
-                content: 'Flexbox solves many common layout problems:\n\n• Centering: display:flex; justify-content:center; align-items:center;\n• Navigation bar: display:flex; justify-content:space-between;\n• Equal columns: display:flex; with flex:1 on each child\n• Footer at bottom: display:flex; flex-direction:column; min-height:100vh; with flex-grow:1 on main content\n\nFlexbox is your go-to for most layout needs!',
-              },
-            ],
-            starterCode: '<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    .container {\n      /* Make this a flex container */\n\n    }\n    .item {\n      background: #7C3AED;\n      color: white;\n      padding: 20px;\n      margin: 5px;\n      border-radius: 8px;\n    }\n  </style>\n</head>\n<body>\n  <div class="container">\n    <div class="item">Item 1</div>\n    <div class="item">Item 2</div>\n    <div class="item">Item 3</div>\n  </div>\n</body>\n</html>',
-            solution: '<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    .container {\n      display: flex;\n      gap: 10px;\n    }\n    .item {\n      background: #7C3AED;\n      color: white;\n      padding: 20px;\n      margin: 5px;\n      border-radius: 8px;\n    }\n  </style>\n</head>\n<body>\n  <div class="container">\n    <div class="item">Item 1</div>\n    <div class="item">Item 2</div>\n    <div class="item">Item 3</div>\n  </div>\n</body>\n</html>',
-            objectives: [
-              { id: 'obj-1', text: 'Add display: flex to the container', completed: false },
-            ],
-            hints: ['Add display: flex; inside .container { }'],
-            validation: (code) => {
-              const hasFlex = /display\s*:\s*flex/i.test(code);
-              return [hasFlex];
-            },
-          },
-        ],
-      },
-      {
-        id: 'module-3-2',
-        name: 'CSS Grid',
-        icon: '📐',
-        lessons: [
-          {
-            id: 'lesson-34',
-            title: 'Grid Container & Items',
-            type: 'guided',
-            xpReward: 150,
-            description: 'Discover CSS Grid — create complex layouts with rows and columns!',
-            slides: [
-              {
-                title: 'What is CSS Grid?',
-                content: 'CSS Grid is a two-dimensional layout system — it handles both rows AND columns simultaneously. While Flexbox is great for one-dimensional layouts (a row OR a column), Grid excels at creating complex page layouts with multiple rows and columns at once.\n\ndisplay: grid creates a grid container. Use grid-template-columns to define your column structure!',
-              },
-              {
-                title: 'Defining Grid Columns & Rows',
-                content: 'Grid uses template properties to define structure:\n\n• grid-template-columns: 200px 200px 200px; — three 200px columns\n• grid-template-columns: 1fr 1fr 1fr; — three equal fractions\n• grid-template-columns: repeat(3, 1fr); — shorthand for above\n• grid-template-columns: 200px 1fr 2fr; — mixed sizes\n• grid-template-rows: 100px auto 200px; — row heights\n\nThe fr unit means "fraction of available space" — it\'s the most useful Grid unit!',
-              },
-              {
-                title: 'Grid Template Areas',
-                content: 'Grid has a powerful feature called template areas that lets you name sections:\n\ngrid-template-areas:\n  "header header header"\n  "sidebar main aside"\n  "footer footer footer";\n\nThen assign elements: .header { grid-area: header; }\n\nThis creates a visual map of your layout right in your CSS! It\'s incredibly intuitive for building page layouts.',
-              },
-              {
-                title: 'Responsive Grid',
-                content: 'Grid can be made responsive with auto-fit and minmax:\n\ngrid-template-columns: repeat(auto-fit, minmax(300px, 1fr));\n\nThis creates as many columns as will fit, each at least 300px wide, expanding to fill available space. No media queries needed!\n\n• auto-fit — fits columns and expands items\n• auto-fill — fits columns but doesn\'t expand\n• minmax(min, max) — sets size range\n\nThis one line creates a fully responsive grid!',
-              },
-            ],
-            starterCode: '<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    .grid {\n      /* Make this a grid with 3 columns */\n\n      gap: 10px;\n    }\n    .cell {\n      background: #06D6A0;\n      color: #0F0E2E;\n      padding: 20px;\n      text-align: center;\n      border-radius: 8px;\n    }\n  </style>\n</head>\n<body>\n  <div class="grid">\n    <div class="cell">1</div>\n    <div class="cell">2</div>\n    <div class="cell">3</div>\n    <div class="cell">4</div>\n    <div class="cell">5</div>\n    <div class="cell">6</div>\n  </div>\n</body>\n</html>',
-            solution: '<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    .grid {\n      display: grid;\n      grid-template-columns: 1fr 1fr 1fr;\n      gap: 10px;\n    }\n    .cell {\n      background: #06D6A0;\n      color: #0F0E2E;\n      padding: 20px;\n      text-align: center;\n      border-radius: 8px;\n    }\n  </style>\n</head>\n<body>\n  <div class="grid">\n    <div class="cell">1</div>\n    <div class="cell">2</div>\n    <div class="cell">3</div>\n    <div class="cell">4</div>\n    <div class="cell">5</div>\n    <div class="cell">6</div>\n  </div>\n</body>\n</html>',
-            objectives: [
-              { id: 'obj-1', text: 'Add display: grid to the container', completed: false },
-              { id: 'obj-2', text: 'Define 3 columns with grid-template-columns', completed: false },
-            ],
-            hints: ['display: grid;', 'grid-template-columns: 1fr 1fr 1fr;'],
-            validation: (code) => {
-              const hasGrid = /display\s*:\s*grid/i.test(code);
-              const hasCols = /grid-template-columns\s*:/i.test(code);
-              return [hasGrid, hasCols];
-            },
-          },
-        ],
-      },
-    ],
-    capstone: {
-      id: 'capstone-3',
-      title: "The Dragon's Lair",
-      description: 'Design a themed multi-section landing page using Grid + Flexbox!',
-      xpReward: 750,
-      badge: 'layout-legend',
-    },
-  },
-  {
-    id: 'world-4',
-    name: 'The Responsive Realm',
-    subtitle: 'Responsive & Animation',
-    icon: '📱',
-    color: '#EF476F',
-    bgGradient: 'from-rose-900 to-pink-900',
-    description: 'Make your websites work on every screen size and add stunning animations!',
-    unlocked: false,
-    modules: [
-      {
-        id: 'module-4-1',
-        name: 'Responsive Design',
-        icon: '📱',
-        lessons: [
-          {
-            id: 'lesson-42',
-            title: 'Media Queries',
-            type: 'guided',
-            xpReward: 150,
-            description: 'Make your designs adapt to any screen size with media queries!',
-            slides: [
-              {
-                title: 'What is Responsive Design?',
-                content: 'Responsive web design makes pages look good on ALL devices — phones, tablets, laptops, and desktops. It uses flexible layouts, flexible images, and CSS media queries. The viewport meta tag is essential:\n\n<meta name="viewport" content="width=device-width, initial-scale=1.0">\n\nThis tells the browser to set the page width to the device width. Without it, mobile browsers zoom out to show the desktop version!',
-              },
-              {
-                title: 'Media Queries',
-                content: 'Media queries let you apply different CSS rules based on screen size:\n\n@media (min-width: 768px) {\n  .container { width: 750px; }\n}\n\n@media (min-width: 1024px) {\n  .container { width: 960px; }\n}\n\nCommon breakpoints:\n• Phones: < 576px\n• Tablets: ≥ 768px\n• Desktops: ≥ 992px\n• Large desktops: ≥ 1200px',
-              },
-              {
-                title: 'Mobile-First Approach',
-                content: 'The mobile-first approach means writing base styles for mobile, then using min-width queries to add styles for larger screens. This is best practice because:\n\n• Mobile has more constraints (smaller screen, slower connection)\n• Forces you to prioritize content\n• Results in cleaner, more maintainable CSS\n• Progressive enhancement — start simple, add complexity\n\nAlways design for the smallest screen first, then scale up!',
-              },
-              {
-                title: 'Responsive Typography & Images',
-                content: 'Make text and images responsive too:\n\n/* Responsive images */\nimg { max-width: 100%; height: auto; }\n\n/* Fluid typography with clamp() */\nh1 { font-size: clamp(1.5rem, 4vw, 3rem); }\n\nclamp(min, preferred, max) sets a font size that scales with the viewport but never goes below min or above max. The vw unit means "viewport width" — 4vw = 4% of the screen width.',
-              },
-            ],
-            starterCode: '<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    .box {\n      background: #7C3AED;\n      color: white;\n      padding: 20px;\n      text-align: center;\n    }\n    /* Add a media query for screens wider than 600px */\n\n  </style>\n</head>\n<body>\n  <div class="box">Resize me!</div>\n</body>\n</html>',
-            solution: '<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    .box {\n      background: #7C3AED;\n      color: white;\n      padding: 20px;\n      text-align: center;\n    }\n    @media (min-width: 600px) {\n      .box {\n        background: #06D6A0;\n        font-size: 24px;\n      }\n    }\n  </style>\n</head>\n<body>\n  <div class="box">Resize me!</div>\n</body>\n</html>',
-            objectives: [
-              { id: 'obj-1', text: 'Add a @media query for min-width: 600px', completed: false },
-              { id: 'obj-2', text: 'Change a style inside the media query', completed: false },
-            ],
-            hints: ['@media (min-width: 600px) { .box { background: green; } }'],
-            validation: (code) => {
-              const hasMedia = /@media/i.test(code);
-              const hasMinWidth = /min-width/i.test(code);
-              return [hasMedia, hasMinWidth];
-            },
-          },
-        ],
-      },
-      {
-        id: 'module-4-2',
-        name: 'Animations',
-        icon: '✨',
-        lessons: [
-          {
-            id: 'lesson-46',
-            title: 'CSS Transitions',
-            type: 'guided',
-            xpReward: 150,
-            description: 'Add smooth transitions to make your elements come alive!',
-            slides: [
-              {
-                title: 'CSS Transitions',
-                content: 'Transitions smoothly animate changes between CSS states. Instead of an instant change, the property gradually shifts over time:\n\ntransition: property duration timing-function delay;\n\nExample:\ntransition: background-color 0.3s ease;\n\nOr animate everything:\ntransition: all 0.3s ease;\n\nTransitions need a trigger (like :hover) to activate. They animate FROM the current state TO the new state.',
-              },
-              {
-                title: 'Timing Functions',
-                content: 'Timing functions control the speed curve of the animation:\n\n• ease — slow start, fast middle, slow end (default)\n• linear — constant speed throughout\n• ease-in — starts slow, ends fast\n• ease-out — starts fast, ends slow\n• ease-in-out — slow at both ends\n• cubic-bezier(n,n,n,n) — custom curve\n\nFor most UI interactions, ease or ease-out feels the most natural. Use 0.2s-0.4s duration for snappy, responsive animations.',
-              },
-              {
-                title: 'CSS Transform',
-                content: 'The transform property lets you move, scale, rotate, and skew elements:\n\n• translate(50px, 100px) — move element\n• scale(1.5) — make 1.5x bigger\n• rotate(45deg) — rotate 45 degrees\n• skew(10deg) — slant the element\n\nCombine multiple transforms:\ntransform: translate(50px, 0) rotate(45deg) scale(1.2);\n\nTransforms are GPU-accelerated, making them the most performant way to animate!',
-              },
-              {
-                title: 'Keyframe Animations',
-                content: 'For complex, multi-step animations, use @keyframes:\n\n@keyframes fadeIn {\n  from { opacity: 0; transform: translateY(20px); }\n  to { opacity: 1; transform: translateY(0); }\n}\n\n.element {\n  animation: fadeIn 1s ease-out forwards;\n}\n\nYou can define multiple steps with percentages:\n\n@keyframes bounce {\n  0% { transform: translateY(0); }\n  50% { transform: translateY(-30px); }\n  100% { transform: translateY(0); }\n}\n\nUse animation-iteration-count: infinite for looping!',
-              },
-            ],
-            starterCode: '<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    .magic-box {\n      width: 100px;\n      height: 100px;\n      background: #7C3AED;\n      /* Add a transition */\n\n    }\n    .magic-box:hover {\n      /* Change something on hover */\n\n    }\n  </style>\n</head>\n<body>\n  <div class="magic-box"></div>\n</body>\n</html>',
-            solution: '<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    .magic-box {\n      width: 100px;\n      height: 100px;\n      background: #7C3AED;\n      transition: all 0.3s ease;\n    }\n    .magic-box:hover {\n      background: #06D6A0;\n      transform: scale(1.2);\n      border-radius: 50%;\n    }\n  </style>\n</head>\n<body>\n  <div class="magic-box"></div>\n</body>\n</html>',
-            objectives: [
-              { id: 'obj-1', text: 'Add a transition property', completed: false },
-              { id: 'obj-2', text: 'Add a :hover state with changed properties', completed: false },
-            ],
-            hints: ['transition: all 0.3s ease;', '.magic-box:hover { background: green; }'],
-            validation: (code) => {
-              const hasTransition = /transition\s*:/i.test(code);
-              const hasHover = /:hover/i.test(code);
-              return [hasTransition, hasHover];
-            },
-          },
-        ],
-      },
-    ],
-    capstone: {
-      id: 'capstone-4',
-      title: 'The Responsive Portfolio',
-      description: 'Build a fully responsive, animated personal portfolio!',
-      xpReward: 750,
-      badge: 'responsive-ranger',
-    },
-  },
-  {
-    id: 'world-5',
-    name: "The Wizard's Tower",
-    subtitle: 'Advanced CSS',
-    icon: '🧙',
-    color: '#8B5CF6',
-    bgGradient: 'from-violet-900 to-purple-900',
-    description: 'Reach the pinnacle of CSS mastery! Variables, architecture, and advanced techniques await.',
-    unlocked: false,
-    modules: [
-      {
-        id: 'module-5-1',
-        name: 'CSS Variables & Architecture',
-        icon: '🏗️',
-        lessons: [
-          {
-            id: 'lesson-53',
-            title: 'Custom Properties',
-            type: 'guided',
-            xpReward: 200,
-            description: 'Harness the power of CSS variables for dynamic, maintainable styles!',
-            slides: [
-              {
-                title: 'CSS Custom Properties (Variables)',
-                content: 'CSS variables let you define reusable values that can be used throughout your stylesheet. Define them in :root for global scope:\n\n:root {\n  --primary-color: #3498db;\n  --spacing-md: 16px;\n  --border-radius: 8px;\n  --shadow: 0 2px 10px rgba(0,0,0,0.1);\n}\n\nUse them with var():\nbackground: var(--primary-color);\npadding: var(--spacing-md);\n\nChange the variable once, and it updates everywhere!',
-              },
-              {
-                title: 'Dark Mode with Variables',
-                content: 'CSS variables make theming incredibly easy:\n\n:root {\n  --bg-color: #ffffff;\n  --text-color: #333333;\n  --card-bg: #f8f9fa;\n}\n\n[data-theme="dark"] {\n  --bg-color: #1a1a2e;\n  --text-color: #e0e0e0;\n  --card-bg: #16213e;\n}\n\nbody {\n  background: var(--bg-color);\n  color: var(--text-color);\n}\n\nToggle the data-theme attribute with JavaScript, and the entire site switches themes instantly!',
-              },
-              {
-                title: 'Fallback Values & Scope',
-                content: 'Variables can have fallback values:\ncolor: var(--undefined-color, #000000);\n\nVariables can be scoped to specific elements:\n\n.card {\n  --card-padding: 20px;\n  padding: var(--card-padding);\n}\n\n.card.compact {\n  --card-padding: 10px;\n  /* Automatically uses 10px! */\n}\n\nThis scoping makes components self-contained and customizable. It\'s the foundation of modern CSS architecture!',
-              },
-              {
-                title: 'BEM Naming Convention',
-                content: 'BEM (Block Element Modifier) is a naming convention that makes CSS more readable:\n\n/* Block */\n.card { }\n\n/* Element (part of block) */\n.card__title { }\n.card__image { }\n.card__body { }\n\n/* Modifier (variation) */\n.card--featured { }\n.card--dark { }\n.card__title--large { }\n\nBEM prevents naming conflicts and makes your CSS self-documenting. Combined with CSS variables, it creates a powerful, maintainable architecture!',
-              },
-            ],
-            starterCode: '<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    :root {\n      /* Define CSS variables here */\n\n    }\n    .card {\n      /* Use your variables */\n      padding: 20px;\n      border-radius: 8px;\n    }\n  </style>\n</head>\n<body>\n  <div class="card">Themed Card</div>\n</body>\n</html>',
-            solution: '<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    :root {\n      --primary: #7C3AED;\n      --text: white;\n      --radius: 12px;\n    }\n    .card {\n      background: var(--primary);\n      color: var(--text);\n      padding: 20px;\n      border-radius: var(--radius);\n    }\n  </style>\n</head>\n<body>\n  <div class="card">Themed Card</div>\n</body>\n</html>',
-            objectives: [
-              { id: 'obj-1', text: 'Define at least 2 CSS variables in :root', completed: false },
-              { id: 'obj-2', text: 'Use var() to apply them', completed: false },
-            ],
-            hints: [':root { --primary: #7C3AED; }', 'background: var(--primary);'],
-            validation: (code) => {
-              const hasVarDef = /--[\w-]+\s*:/i.test(code);
-              const hasVarUse = /var\s*\(--/i.test(code);
-              return [hasVarDef, hasVarUse];
-            },
-          },
-        ],
-      },
-    ],
-    capstone: {
-      id: 'capstone-5',
-      title: 'The Ultimate Portfolio',
-      description: 'Build a professional-grade portfolio with advanced CSS techniques!',
-      xpReward: 1000,
-      badge: 'web-wizard',
-    },
-  },
-];
-
-export default curriculum;
